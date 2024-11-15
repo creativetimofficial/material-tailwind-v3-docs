@@ -16,7 +16,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   transpilePackages: ["next-mdx-remote"],
-  assetPrefix: isProd ? "https://material-tailwind-v3.vercel.app/" : undefined,
+  assetPrefix: isProd ? "https://material-tailwind-v3-docs-site.vercel.app/" : undefined,
   async redirects() {
     return [
       {
