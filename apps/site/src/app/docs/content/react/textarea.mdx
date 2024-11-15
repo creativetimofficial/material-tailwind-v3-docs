@@ -1,0 +1,252 @@
+---
+title: React and Tailwind CSS Textarea - Material Tailwind v3
+description: Design responsive text areas using React and Tailwind CSS with Material Tailwind v3. Customize and style your text inputs for a better user experience.
+github: textarea
+prev: docs/react/switch
+next: docs/react/accordion
+---
+
+# Tailwind CSS Textarea - React
+
+Easily create `Textarea` component with different styles using our component based on React and styled with Tailwind CSS. It is useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+
+See below our examples that will help you create a simple `Textarea` components for your project. Choose from different colors and styles, so you can adapt the component easily to your needs.
+
+---
+
+## Textarea Demo
+
+Here's how to implement a simple and responsive `Textarea` component. It is perfect for forms requiring comment box, such as user review form.
+
+<ComponentPreview demo={<Textarea.TextareaDemo />}>
+```tsx
+import { Textarea } from "@material-tailwind/react";
+
+export function TextareaDemo() {
+  return <Textarea placeholder="Message here..." />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Textarea Sizes
+
+We provide different textarea sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the textarea size.
+
+In the example below, we've showcased the different textarea sizes that you can use in your project.
+
+
+<ComponentPreview demo={<Textarea.TextareaSizes />}>
+```tsx
+import { Textarea } from "@material-tailwind/react";
+
+export function TextareaSizes() {
+  return (
+    <div className="w-full space-y-4">
+      <Textarea size="sm" placeholder="Textarea Small" />
+      <Textarea size="md" placeholder="Textarea Medium" />
+      <Textarea size="lg" placeholder="Textarea Large" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Textarea Color
+
+We provide different textarea colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the textarea color.
+
+In the example below, we've showcased the different textarea colors that you can use in your project.
+
+<ComponentPreview demo={<Textarea.TextareaColors />}>
+```tsx
+import { Textarea } from "@material-tailwind/react";
+
+export function TextareaColors() {
+  return (
+    <div className="w-full space-y-4">
+      <Textarea color="primary" placeholder="Textarea Primary" />
+      <Textarea color="secondary" placeholder="Textarea Secondary" />
+      <Textarea color="info" placeholder="Textarea Info" />
+      <Textarea color="success" placeholder="Textarea Success" />
+      <Textarea color="warning" placeholder="Textarea Warning" />
+      <Textarea color="error" placeholder="Textarea Error" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Textarea with Validation
+
+We provide helpful props like `isError` and `isSuccess` for showing error and success states of a textarea. In the example below, we've showcased the `Textarea` component with error and success states that you can use in your project.
+
+<ComponentPreview demo={<Textarea.TextareaWithValidation />}>
+```tsx
+import { Textarea, Typography } from "@material-tailwind/react";
+
+export function TextareaWithValidation() {
+  return (
+    <div className="w-full space-y-6">
+      <div className="w-full space-y-1">
+        <Textarea color="error" placeholder="Textarea Error" isError />
+        <Typography type="small" color="error">
+          Something went wrong!
+        </Typography>
+      </div>
+      <div className="w-full space-y-1">
+        <Textarea color="success" placeholder="Textarea Success" isSuccess />
+        <Typography type="small" color="success">
+          Congratulations 🎉
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Textarea with Label
+
+The `Textarea` component can be used with a label to provide more context to the user. In the example below, we've added a label by using the `Textarea` and `Typography` components together.
+
+<ComponentPreview demo={<Textarea.TextareaWithLabel />}>
+```tsx
+import { Textarea, Typography } from "@material-tailwind/react";
+
+export function TextareaWithLabel() {
+  return (
+    <div className="w-full space-y-1.5">
+      <Typography
+        as="label"
+        htmlFor="message"
+        type="small"
+        color="default"
+        className="font-medium"
+      >
+        Message
+      </Typography>
+      <Textarea id="message" placeholder="Your message..." />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Textarea with Helper Text
+
+You can use `Textarea` and `Typography` components together to provide more details for the textarea. In the example below, we've added a hint text with an icon below the textarea to provide more context to the user.
+
+<ComponentPreview demo={<Textarea.TextareaWithHelperText />}>
+```tsx
+import { Textarea, Typography } from "@material-tailwind/react";
+import { InfoCircle } from "iconoir-react";
+
+export function TextareaWithHelperText() {
+  return (
+    <div className="w-full space-y-2">
+      <Textarea placeholder="Your message..." />
+      <div className="flex gap-1.5 text-foreground">
+        <InfoCircle className="h-3.5 w-3.5 shrink-0 translate-y-[3px] stroke-2" />
+        <Typography type="small">
+          Use at least 255 characters and a maximum of 1000 characters.
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Textarea Disabled
+
+You can disable the textarea by adding the `disabled` prop. This will prevent the user from interacting with the textarea.
+
+<ComponentPreview demo={<Textarea.TextareaDisabled />}>
+```tsx
+import { Textarea } from "@material-tailwind/react";
+
+export function TextareaDisabled() {
+  return <Textarea disabled placeholder="Message here..." />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Comment Box with Textarea
+
+In the example below, we've showcased the commnet box built with `Textarea`, `IconButton` and `Button` components that you can use in your project.
+
+<ComponentPreview demo={<Textarea.CommentBoxWithTextarea />}>
+```tsx
+import { Button, IconButton, Textarea } from "@material-tailwind/react";
+import { Attachment } from "iconoir-react";
+
+export function CommentBoxWithTextarea() {
+  return (
+    <form action="#">
+      <Textarea type="email" placeholder="someone@example.com" />
+      <div className="flex w-full justify-between py-1.5">
+        <IconButton variant="ghost" color="secondary" size="sm">
+          <Attachment className="h-4 w-4" />
+        </IconButton>
+        <div className="flex gap-2">
+          <Button size="sm" color="secondary" variant="ghost">
+            Cancel
+          </Button>
+          <Button size="sm">Post Comment</Button>
+        </div>
+      </div>
+    </form>
+  );
+}
+```
+</ComponentPreview>
+
+
+---
+
+## Chatbox with Textarea
+
+In the example below, we've showcased the a chatbox like X/Twitter built with `Textarea` and `IconButton` components that you can use in your project.
+
+<ComponentPreview demo={<Textarea.ChatboxWithTextarea />}>
+```tsx
+import { IconButton, Textarea } from "@material-tailwind/react";
+import { Emoji, GifFormat, MediaImage, Send } from "iconoir-react";
+
+export function ChatboxWithTextarea() {
+  return (
+    <form action="#" className="flex w-full items-center gap-4">
+      <div className="flex items-center gap-1">
+        <IconButton variant="ghost">
+          <MediaImage className="h-5 w-5" />
+        </IconButton>
+        <IconButton variant="ghost">
+          <GifFormat className="h-5 w-5" />
+        </IconButton>
+        <IconButton variant="ghost">
+          <Emoji className="h-5 w-5" />
+        </IconButton>
+      </div>
+      <Textarea placeholder="Send a new message" rows={1} />
+      <IconButton variant="ghost">
+        <Send className="h-5 w-5" />
+      </IconButton>
+    </form>
+  );
+}
+```
+</ComponentPreview>

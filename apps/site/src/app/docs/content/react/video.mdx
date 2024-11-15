@@ -1,0 +1,70 @@
+---
+title: React and Tailwind CSS Video - Material Tailwind v3
+description: Integrate and style video elements with React and Tailwind CSS using Material Tailwind v3. Improve your multimedia content with responsive video components.
+github: video
+prev: docs/react/typography
+next: docs/react/alert
+---
+
+# Tailwind CSS Video - React
+
+Use our React and Tailwind CSS `video` example to display video in your web projects. The `video` can be used to display media content specially videos on your website.
+
+See below our beautiful `video` examples that you can use in your Tailwind CSS and React project. The examples also comes in different styles so you can adapt it easily to your needs.
+
+---
+
+## Video Demo
+
+Here's how to implement a simple and responsive video. It can be used to display video content on your website.
+
+<ComponentPreview demo={<Video.VideoDemo />}>
+```tsx
+export function VideoDemo() {
+  return (
+    <video className="h-full w-full rounded-lg" controls>
+      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Video Autoplay
+
+You can use the `autoPlay` attribute to make the video play automatically when the page loads.
+
+<ComponentPreview demo={<Video.VideoAutoplay />}>
+```tsx
+export function VideoAutoplay() {
+  return (
+    <video className="h-full w-full rounded-lg" controls autoPlay>
+      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Video Muted
+
+You can use the `muted` attribute to mute the video.
+
+<ComponentPreview demo={<Video.VideoMuted />}>
+```tsx
+export function VideoMuted() {
+  return (
+    <video className="h-full w-full rounded-lg" controls muted>
+      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</ComponentPreview>

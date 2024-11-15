@@ -1,0 +1,239 @@
+---
+title: React and Tailwind CSS Checkbox - Material Tailwind v3
+description: Implement and style checkboxes using React and Tailwind CSS with Material Tailwind v3. Improve form interactivity with customizable designs.
+github: checkbox
+prev: docs/react/button-group
+next: docs/react/icon-button
+---
+
+# Tailwind CSS Checkbox - React
+
+Use our Tailwind CSS `Checkbox` component to allow the user to select one or more items from a set.
+
+You can use a checkbox for:
+
+- Selecting one or more options from a list.
+- Presenting a list containing sub-selections.
+- Turning an item on/off in a desktop environment (If you have a single option, avoid using a checkbox and use an on/off switch instead).
+
+See below our `Checkbox` component examples that you can use in your Tailwind CSS and React project. The examples comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Checkbox Demo
+
+Here's how to implement a `Checkbox` component. It can be used for forms or other components.
+
+<ComponentPreview demo={<Checkbox.CheckboxDemo />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function CheckboxDemo() {
+  return (
+    <Checkbox>
+      <Checkbox.Indicator />
+    </Checkbox>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox Colors
+
+We provide different checkbox colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the checkbox color.
+
+In the example below, we've showcased the different checkbox colors that you can use in your project.
+
+<ComponentPreview demo={<Checkbox.CheckboxColors />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function CheckboxColors() {
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      <Checkbox color="primary">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="secondary">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="info">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="success">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="warning">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="error">
+        <Checkbox.Indicator />
+      </Checkbox>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox with Label
+
+The `Checkbox` component can be used with a label to provide more context to the user. In the example below, we've added a label to the checkbox by using the `Checkbox` and `Typography` components together.
+
+<ComponentPreview demo={<Checkbox.CheckboxWithLabel />}>
+```tsx
+import { Checkbox, Typography } from "@material-tailwind/react";
+
+export function CheckboxWithLabel() {
+  return (
+    <div className="flex items-center gap-2">
+      <Checkbox id="checkbox">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Typography
+        as="label"
+        htmlFor="checkbox"
+        className="cursor-pointer text-foreground"
+      >
+        Remember Me
+      </Typography>
+    </div>
+  );
+}
+
+```
+</ComponentPreview>
+
+---
+
+## Checkbox with Custom Icon
+
+You can customize and change the icon used for the checkbox by using new icons inside the `Checkbox.Indicator` component. In the example below, we use the `Star` and `StarSolid` icons for `checked` and `unchecked` states.
+
+To make it work, you need to use `group-data-[checked=true]` for the icons to show/hide based on the checkbox state.
+
+<ComponentPreview demo={<Checkbox.CheckboxWithCustomIcon />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+import { Star, StarSolid } from "iconoir-react";
+
+export function CheckboxWithCustomIcon() {
+  return (
+    <Checkbox className="border-0 shadow-none hover:shadow-none data-[checked=true]:bg-transparent">
+      <Checkbox.Indicator className="relative left-0 top-0 opacity-100">
+        <Star className="absolute inset-0 h-5 w-5 text-primary opacity-100 group-data-[checked=true]:opacity-0" />
+        <StarSolid className="absolute inset-0 h-5 w-5 text-primary opacity-0 group-data-[checked=true]:opacity-100" />
+      </Checkbox.Indicator>
+    </Checkbox>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Disabled Checkbox
+
+You can disable the checkbox by adding the `disabled` prop. This will prevent the user from interacting with the checkbox.
+
+<ComponentPreview demo={<Checkbox.DisabledCheckbox />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function DisabledCheckbox() {
+  return (
+    <Checkbox disabled>
+      <Checkbox.Indicator />
+    </Checkbox>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox with Link
+
+Use the example below to create a `Checkbox` component with a link to the terms and conditions inside it's label.
+
+<ComponentPreview demo={<Checkbox.CheckboxWithLink />}>
+```tsx
+import { Checkbox, Typography } from "@material-tailwind/react";
+
+export function CheckboxWithLink() {
+  return (
+    <div className="flex items-center gap-2">
+      <Checkbox id="checkbox-link">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Typography
+        as="label"
+        htmlFor="checkbox-link"
+        className="cursor-pointer text-foreground"
+      >
+        I agree with the&nbsp;
+        <Typography as="a" href="#" color="primary" className="inline">
+          terms and conditions
+        </Typography>
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox With Description
+
+Use the example below to create a `Checkbox` component with a title and description as it's label to provide more information about the checkbox action.
+
+<ComponentPreview demo={<Checkbox.CheckboxWithDescription />}>
+```tsx
+import { Checkbox, Typography } from "@material-tailwind/react";
+
+export function CheckboxWithDescription() {
+  return (
+    <div className="flex gap-2">
+      <Checkbox id="checkbox-description">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <label
+        htmlFor="checkbox-description"
+        className="-translate-y-0.5 cursor-pointer"
+      >
+        <Typography className="font-semibold">
+          Remember Me
+        </Typography>
+        <Typography type="small" className="text-foreground">
+          You&apos;ll be able to login without password for 24 hours.
+        </Typography>
+      </label>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox Custom Styles
+
+You can use `className` prop to customize the `Checkbox` component style. In the example below, we make the checkbox circular.
+
+<ComponentPreview demo={<Checkbox.CustomCheckbox />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function CustomCheckbox() {
+  return (
+    <Checkbox className="rounded-full">
+      <Checkbox.Indicator className="scale-75 data-[checked=true]:scale-90" />
+    </Checkbox>
+  );
+}
+```
+</ComponentPreview>

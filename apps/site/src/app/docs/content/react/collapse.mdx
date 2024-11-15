@@ -1,0 +1,53 @@
+---
+title: React and Tailwind CSS Collapse - Material Tailwind v3
+description: Implement collapsible sections with React and Tailwind CSS using Material Tailwind v3. Organize content dynamically with responsive collapse components.
+github: collapse
+prev: docs/react/chip
+next: docs/react/image
+---
+
+# Tailwind CSS Collapse - React
+
+Use our `collapse` component based on React and Tailwind CSS for your website. You can use it for accordion, collapsible items and much more.
+
+See below our `Collapse` component examples that you can use in your Tailwind CSS and React project.
+
+---
+
+## Collapse Demo
+
+Here's how to implement a simple and responsive `Collapse` component. It can be used for accordion, mobile menu, file tree, and much more.
+
+<ComponentPreview demo={<Collapse.CollapseDemo />}>
+```tsx
+import * as React from "react";
+import { Collapse, List } from "@material-tailwind/react";
+import { NavArrowRight } from "iconoir-react";
+
+export function CollapseDemo() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <>
+      <List>
+        <List.Item onClick={() => setIsOpen((cur) => !cur)}>
+          Components
+          <List.ItemEnd>
+            <NavArrowRight className="h-5 w-5 stroke-[1.5]" />
+          </List.ItemEnd>
+        </List.Item>
+        <Collapse open={isOpen}>
+          <List>
+            <List.Item>Avatar</List.Item>
+            <List.Item>Button</List.Item>
+            <List.Item>Input</List.Item>
+            <List.Item>Checkbox</List.Item>
+            <List.Item>Select</List.Item>
+          </List>
+        </Collapse>
+      </List>
+    </>
+  );
+}
+```
+</ComponentPreview>

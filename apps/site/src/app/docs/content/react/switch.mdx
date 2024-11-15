@@ -1,0 +1,194 @@
+---
+title: React and Tailwind CSS Switch - Material Tailwind v3
+description: Create toggle switches with React and Tailwind CSS in Material Tailwind v3. Improve user interfaces with sleek and responsive switch components.
+github: switch
+prev: docs/react/slider
+next: docs/react/textarea
+---
+
+# Tailwind CSS Switch - React
+
+Use our Tailwind CSS `Switch` component to let users adjust settings on/off. The option that the Switch controls, as well as the state it's in, should be made clear from the corresponding inline label.
+
+See below our example that will help you create simple and easy-to-use `Switch` component for your Tailwind CSS and React project.
+
+---
+
+## Switch Demo
+
+Here's how to implement a `Switch` component. It can be used for forms or other components.
+
+<ComponentPreview demo={<Switch.SwitchDemo />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function SwitchDemo() {
+  return <Switch />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch Checked
+
+You can use the `defaultChecked` prop for making the `Switch` component checked by default.
+
+<ComponentPreview demo={<Switch.SwitchChecked />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function SwitchChecked() {
+  return <Switch defaultChecked />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch Colors
+
+We provide different colors for `Switch` component like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the `Switch` component color.
+
+In the example below, we've showcased the different colors for `Switch` component that you can use in your project.
+
+<ComponentPreview demo={<Switch.SwitchColors />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function SwitchColors() {
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      <Switch color="primary" />
+      <Switch color="secondary" />
+      <Switch color="info" />
+      <Switch color="success" />
+      <Switch color="warning" />
+      <Switch color="error" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch with Label
+
+The `Switch` component can be used with a label to provide more context to the user. In the example below, we've added a label by using the `Switch` and `Typography` components together.
+
+<ComponentPreview demo={<Switch.SwitchWithLabel />}>
+```tsx
+import { Switch, Typography } from "@material-tailwind/react";
+
+export function SwitchWithLabel() {
+  return (
+    <div className="flex items-center gap-2">
+      <Switch id="switch" />
+      <Typography
+        as="label"
+        htmlFor="switch"
+        className="cursor-pointer text-foreground"
+      >
+        Dark Mode
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Disabled Switch
+
+You can disable the `Switch` component by adding the `disabled` prop. This will prevent the user from interacting with the `Switch` component.
+
+<ComponentPreview demo={<Switch.DisabledSwitch />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function DisabledSwitch() {
+  return <Switch disabled />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch with Link
+
+Use the example below to create a `Switch` component with a link to the terms and conditions inside it's label.
+
+<ComponentPreview demo={<Switch.SwitchWithLink />}>
+```tsx
+import { Switch, Typography } from "@material-tailwind/react";
+
+export function SwitchWithLink() {
+  return (
+    <div className="flex items-center gap-2">
+      <Switch id="switch-link" />
+      <Typography
+        as="label"
+        htmlFor="switch-link"
+        className="cursor-pointer text-foreground"
+      >
+        I agree with the&nbsp;
+        <Typography as="a" href="#" color="primary" className="inline">
+          terms and conditions
+        </Typography>
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch With Description
+
+Use the example below to create a `Switch` component with a title and description as it's label to provide more information about the `Switch` component action.
+
+<ComponentPreview demo={<Switch.SwitchWithDescription />}>
+```tsx
+import { Switch, Typography } from "@material-tailwind/react";
+
+export function SwitchWithDescription() {
+  return (
+    <div className="flex gap-4">
+      <Switch id="switch-description" />
+      <label
+        htmlFor="switch-description"
+        className="-translate-y-0.5 cursor-pointer"
+      >
+        <Typography color="default" className="font-semibold">
+          Remember Me
+        </Typography>
+        <Typography type="small" className="text-foreground">
+          You&apos;ll be able to login without password for 24 hours.
+        </Typography>
+      </label>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch Custom Styles
+
+You can use `className` prop to customize the `Switch` component style. In the example below, we make a `Switch` component similar to IOS switch component.
+
+<ComponentPreview demo={<Switch.CustomSwitch />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function CustomSwitch() {
+  return (
+    <Switch className="after:shadow-sm after:shadow-black/10 checked:before:bg-[#2ec946]" />
+  );
+}
+```
+</ComponentPreview>

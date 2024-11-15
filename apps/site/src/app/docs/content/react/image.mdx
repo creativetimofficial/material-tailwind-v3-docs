@@ -1,0 +1,158 @@
+---
+title: React and Tailwind CSS Image - Material Tailwind v3
+description: Display responsive images with React and Tailwind CSS in Material Tailwind v3. Customize and style images for an optimized visual experience.
+github: image
+prev: docs/react/collapse
+next: docs/react/list
+---
+
+# Tailwind CSS Image - React
+
+Use our React and Tailwind CSS `img` examples to portray people or objects in your web projects. The img can be used to display media content on your website.
+
+See below our beautiful `img` examples that you can use in your Tailwind CSS and React project. The examples also comes in different styles so you can adapt it easily to your needs.
+
+---
+
+## Image Demo
+
+Here's how to implement a simple and responsive img. It can be used to display media content on your website.
+
+<ComponentPreview demo={<Image.ImageDemo />}>
+```tsx
+export function ImageDemo() {
+  return (
+    <img
+      src="https://dub.sh/Y0NxRWv"
+      alt="nature-image"
+      className="h-96 w-full object-cover object-center"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Image with Rounded Corners
+
+Here's how to implement an img with rounded corners using the `rounded-lg` classname.
+
+<ComponentPreview demo={<Image.ImageWithRoundedCorners />}>
+```tsx
+export function ImageWithRoundedCorners() {
+  return (
+    <img
+      src="https://dub.sh/Y0NxRWv"
+      alt="nature-image"
+      className="h-96 w-full rounded-lg object-cover object-center"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Circular Image
+
+Here's how to implement a circular img using the `rounded-full` classname.
+
+<ComponentPreview demo={<Image.CircularImage />}>
+```tsx
+export function CircularImage() {
+  return (
+    <img
+      src="https://dub.sh/Y0NxRWv"
+      alt="nature-image"
+      className="h-96 w-96 rounded-full object-cover object-center"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Image with Shadow
+
+Here's how to implement an img with a shadow using the `shadow-lg` and `shadow-black/25` classnames.
+
+<ComponentPreview demo={<Image.ImageWithShadow />}>
+```tsx
+export function ImageWithShadow() {
+  return (
+    <img
+      src="https://dub.sh/Y0NxRWv"
+      alt="nature-image"
+      className="h-96 w-full rounded-lg object-cover object-center shadow-lg shadow-black/25"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Image with Caption
+
+Here's how to implement an img with a caption using the `figure` HTML elements.
+
+<ComponentPreview demo={<Image.ImageWithCaption />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+export function ImageWithCaption() {
+  return (
+    <figure>
+      <img
+        src="https://dub.sh/Y0NxRWv"
+        alt="nature-image"
+        className="h-96 w-full rounded-lg object-cover object-center"
+      />
+      <Typography as="caption" type="small" className="mt-2 block text-center">
+        Image Caption
+      </Typography>
+    </figure>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Image with Blurred Caption
+
+Here's how to implement an img with a blurred caption using the `Card` and `Typography` components.
+
+<ComponentPreview demo={<Image.ImageWithBlurredCaption />}>
+```tsx
+import { Card, Typography } from "@material-tailwind/react";
+
+export function ImageWithBlurredCaption() {
+  return (
+    <figure className="relative h-96 w-full">
+      <img
+        src="https://dub.sh/Y0NxRWv"
+        alt="nature-image"
+        className="h-full w-full rounded-xl object-cover object-center"
+      />
+      <Card
+        as="figcaption"
+        className="absolute bottom-4 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 bg-opacity-75 saturate-200 backdrop-blur-md"
+      >
+        <Card.Body className="flex justify-between px-4">
+          <div>
+            <Typography type="h6">Sara Lamalo</Typography>
+            <Typography className="mt-1 text-foreground">
+              20 July 2022
+            </Typography>
+          </div>
+          <Typography className="font-bold">Growth</Typography>
+        </Card.Body>
+      </Card>
+    </figure>
+  );
+}
+```
+</ComponentPreview>

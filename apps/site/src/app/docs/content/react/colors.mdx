@@ -1,0 +1,246 @@
+---
+title: Color Palette - Material Tailwind
+description: Check the default color palette for Material Tailwind.
+github: colors
+prev: docs/react/theming
+next: docs/react/fonts
+---
+
+# Color Palette - Material Tailwind
+
+`@material-tailwind/react` has two color palettes one is the color palette used for light mode and the other is the color palette used for dark mode. Both color palettes are using the same colors as the ones used in Tailwind CSS.
+
+Both color palettes has 9 different colors for different purposes like `background`, `foreground`, `surface`, `primary`, `secondary`, `info`, `success`, `warning` and `error`. Each color has 4 different shades like `DEFAULT`, `light`, `dark` and `foreground`.
+
+Below you can check all the colors, their shades and their hex color code.
+
+---
+
+## Light Mode Color Palette
+
+### Background
+
+<ColorPalette colors={{ default: "#ffffff" }} />
+
+### Foreground
+
+<ColorPalette colors={{ default: "#374151" }} />
+
+### Black
+
+<ColorPalette colors={{ default: "#030712" }} />
+
+### White
+
+<ColorPalette colors={{ default: "#ffffff" }} />
+
+### Surface
+
+<ColorPalette 
+  colors={{
+    default: "#e5e7eb",
+    dark: "#d1d5db",
+    light: "#f3f4f6",
+    foreground: "#030712"
+  }}
+/>
+
+### Primary
+
+<ColorPalette 
+  colors={{
+    default: "#6028ff",
+    dark: "#5216eb",
+    light: "#724dff",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Secondary
+
+<ColorPalette 
+  colors={{
+    default: "#e5e7eb",
+    dark: "#d1d5db",
+    light: "#f3f4f6",
+    foreground: "#030712"
+  }}
+/>
+
+### Info
+
+<ColorPalette 
+  colors={{
+    default: "#0062ff",
+    dark: "#0055dd",
+    light: "#007aff",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Success
+
+<ColorPalette 
+  colors={{
+    default: "#00bf6b",
+    dark: "#00a35f",
+    light: "#02e585",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Warning
+
+<ColorPalette 
+  colors={{
+    default: "#fca327",
+    dark: "#f67d0a",
+    light: "#fdba4c",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Error
+
+<ColorPalette 
+  colors={{
+    default: "#ef4444",
+    dark: "#dc2626",
+    light: "#f87171",
+    foreground: "#f9fafb"
+  }}
+/>
+
+---
+
+## Dark Mode Color Palette
+
+### Background
+
+<ColorPalette colors={{ default: "#030712" }} />
+
+### Foreground
+
+<ColorPalette colors={{ default: "#9ca3af" }} />
+
+### Black
+
+<ColorPalette colors={{ default: "#030712" }} />
+
+### White
+
+<ColorPalette colors={{ default: "#ffffff" }} />
+
+### Surface
+
+<ColorPalette 
+  colors={{
+    default: "#1f2937",
+    dark: "#111827",
+    light: "#374151",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Primary
+
+<ColorPalette 
+  colors={{
+    default: "#6028ff",
+    dark: "#5216eb",
+    light: "#724dff",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Secondary
+
+<ColorPalette 
+  colors={{
+    default: "#1f2937",
+    dark: "#111827",
+    light: "#374151",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Info
+
+<ColorPalette 
+  colors={{
+    default: "#0062ff",
+    dark: "#0055dd",
+    light: "#007aff",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Success
+
+<ColorPalette 
+  colors={{
+    default: "#00bf6b",
+    dark: "#00a35f",
+    light: "#02e585",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Warning
+
+<ColorPalette 
+  colors={{
+    default: "#fca327",
+    dark: "#f67d0a",
+    light: "#fdba4c",
+    foreground: "#f9fafb"
+  }}
+/>
+
+### Error
+
+<ColorPalette 
+  colors={{
+    default: "#ef4444",
+    dark: "#dc2626",
+    light: "#f87171",
+    foreground: "#f9fafb"
+  }}
+/>
+
+---
+
+## Types Definition
+
+### Colors 
+
+<CodePreview>
+```ts
+export interface Colors {
+  background?: `#${string}`;
+  foreground?: `#${string}`;
+  black?: `#${string}`;
+  white?: `#${string}`;
+  surface?: Color;
+  primary?: Color;
+  secondary?: Color;
+  info?: Color;
+  success?: Color;
+  warning?: Color;
+  error?: Color;
+}
+```
+</CodePreview>
+
+### Color 
+
+<CodePreview>
+```ts
+export interface Color {
+  default?: `#${string}`;
+  dark?: `#${string}`;
+  light?: `#${string}`;
+  foreground?: `#${string}`;
+}
+```
+</CodePreview>

@@ -1,0 +1,216 @@
+---
+title: React and Tailwind CSS Avatar - Material Tailwind v3
+description: Create and style avatars with React and Tailwind CSS in Material Tailwind v3. Personalize user profiles with responsive and customizable avatar components.
+github: avatar
+prev: docs/react/accordion
+next: docs/react/badge
+---
+
+# Tailwind CSS Avatar - React
+
+Our React `Avatar` component is used to represent people or objects in your web projects. The avatar component usually displays a profile picture or a placeholder graphic if no image is available. Commonly places for avatars include: user profiles, comment sections, user lists, and anywhere else where a visual representation of a user is needed.
+
+To jumpstart your development process, we offer a range of pre-designed `Avatar` examples that are ready to be integrated into your project. All our examples are based on React and styled with Tailwind CSS.
+
+---
+
+## Avatar Demo
+
+Get started with this simple avatar example that comes with a pre-set image, ensuring that your avatars look great from the start. You can easily replace the default `src` with any image URL to display user-specific avatars.
+
+<ComponentPreview demo={<Avatar.AvatarDemo />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarDemo() {
+  return <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />;
+}
+```
+</ComponentPreview>
+
+<br />
+
+Also, use the `alt` tag, set as "profile-picture", to make sure that the component is accessible. This feature is essential for screen readers, search engine optimization, and aligns with web accessibility standards
+
+---
+
+## Avatar Variants
+
+We provides different avatar variants like `circular`, `rounded`, and `square` so you can adapt it easily to your needs. You can simply use the `variant` prop to change the avatar variant.
+
+In the example below, we've showcased the different avatar variants that you can use in your project.
+
+<ComponentPreview demo={<Avatar.AvatarVariants />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarVariants() {
+  return (
+    <div className="item-center flex gap-2">
+      <Avatar
+        shape="circular"
+        src="https://dub.sh/TdSBP0D"
+        alt="profile-picture"
+      />
+      <Avatar
+        shape="rounded"
+        src="https://dub.sh/TdSBP0D"
+        alt="profile-picture"
+      />
+      <Avatar
+        shape="square"
+        src="https://dub.sh/TdSBP0D"
+        alt="profile-picture"
+      />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+<br />
+
+As showcased in the example above, here are the avatar component variants:
+
+- `circular` variant (default) - perfect for social media platforms, forums, and chat applications.
+- `rounded` variant - can be used in business applications, professional networks, or team collaboration tools.
+- `square` variant - ideal for corporate environments, document management systems, or platforms where a more serious tone is preferred.
+
+---
+
+## Avatar Sizes
+
+We provide different avatar sizes like `xs`, `sm`, `md`, `lg`, `xl` and `xxl` so you can adapt it easily to your needs. You can simply use the `size` prop to change the avatar size.
+
+In the example below, we've showcased the different avatar sizes that you can use in your project.
+
+<ComponentPreview demo={<Avatar.AvatarSizes />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarSizes() {
+  return (
+    <div className="flex items-end gap-2">
+      <Avatar size="xs" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="sm" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="md" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="lg" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="xl" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="xxl" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Avatar with Text
+
+You can use avatar with other components as well, see the example below. This component showcases a combination of `Avatar` and `Typography` components to create a complete user profile presentation.
+
+<ComponentPreview demo={<Avatar.AvatarWithText />}>
+```tsx
+import { Avatar, Typography } from "@material-tailwind/react";
+
+export function AvatarWithText() {
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center gap-4">
+        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" />
+        <div>
+          <Typography>Tania Andrew</Typography>
+          <Typography type="small" className="text-foreground">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" shape="rounded" />
+        <div>
+          <Typography>Tania Andrew</Typography>
+          <Typography type="small" className="text-foreground">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" shape="square" />
+        <div>
+          <Typography>Tania Andrew</Typography>
+          <Typography type="small" className="text-foreground">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Avatar Stack
+
+Use this example of overlapped avatars to represent a group of users in a friendly and compact way. For example, showing multiple people involved in a team.
+
+<ComponentPreview demo={<Avatar.AvatarStack />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarStack() {
+  return (
+    <div className="flex items-center -space-x-4">
+      <Avatar
+        alt="user 1"
+        className="border-2 border-secondary hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+      <Avatar
+        alt="user 2"
+        className="border-2 border-secondary hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+      <Avatar
+        alt="user 3"
+        className="border-2 border-secondary hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+      <Avatar
+        alt="user 4"
+        className="border-2 border-secondary hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+      <Avatar
+        alt="user 5"
+        className="border-2 border-secondary hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+---
+
+## Avatar Custom Styles
+
+You can use the `className` prop to customize the `Avatar` component style and make your own custom avatar. In the example below, we've showcased how to create custom avatar with green border and ring around it.
+
+<ComponentPreview demo={<Avatar.AvatarCustomStyles />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarCustomStyles() {
+  return (
+    <Avatar
+      size="lg"
+      alt="avatar"
+      src="https://dub.sh/TdSBP0D"
+      className="border border-green-500 ring-4 ring-green-500/20"
+    />
+  );
+}
+```
+</ComponentPreview>

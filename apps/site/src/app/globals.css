@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+  scrollbar-gutter: stable;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    scrollbar-color: #1f2937 transparent !important;
+  }
+}
+
+/* backdrop */
+.DocSearch.DocSearch-Container {
+  @apply bg-black/50;
+}
+
+/* dialog */
+.DocSearch.DocSearch-Container .DocSearch-Modal {
+  @apply overflow-hidden rounded-none border border-surface bg-background shadow-2xl shadow-black/5;
+}
+
+@media screen and (min-width: 768px) {
+  .DocSearch.DocSearch-Container .DocSearch-Modal {
+    @apply rounded-xl;
+  }
+}
+
+/* search input */
+.DocSearch.DocSearch-Container .DocSearch-Form {
+  @apply rounded-md bg-transparent shadow-[0_0_0_2px] shadow-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-MagnifierLabel,
+.DocSearch.DocSearch-Container .DocSearch-LoadingIndicator {
+  @apply text-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-MagnifierLabel svg,
+.DocSearch.DocSearch-Container .DocSearch-LoadingIndicator svg {
+  @apply stroke-2;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Input {
+  @apply text-black placeholder:text-foreground/60 dark:text-white;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Reset svg {
+  @apply stroke-2 text-primary;
+}
+
+/* search area */
+.DocSearch.DocSearch-Container .DocSearch-Help {
+  @apply text-base text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Label {
+  @apply text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Dropdown {
+  @apply p-3;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-source {
+  @apply m-0.5 bg-transparent p-0 text-black dark:text-white;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit {
+  @apply rounded-lg pb-2.5;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit a {
+  @apply rounded-lg border border-surface bg-background text-foreground shadow-[0_4px_0_0] shadow-surface;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit[aria-selected="true"] a {
+  @apply border-primary bg-primary text-primary-foreground shadow-primary-dark;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-icon {
+  @apply text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-title mark {
+  @apply text-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Screen-Icon {
+  @apply mx-auto w-max text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Prefill {
+  @apply text-primary;
+}
+.DocSearch.DocSearch-Container .DocSearch-Cancel {
+  @apply text-black dark:text-white;
+}
+
+/* footer */
+.DocSearch.DocSearch-Container .DocSearch-Footer {
+  @apply rounded-none border-t border-surface bg-transparent shadow-none;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Commands-Key {
+  @apply w-max rounded px-1.5 py-1 text-[11px] font-semibold text-black shadow-[0_1.5px_0_0] shadow-surface [background:rgb(var(--color-surface-light))] [border:1px_solid_rgb(var(--color-surface))] dark:text-white;
+}
+
+/* lexical */
+.lexical h1 {
+  @apply text-2xl font-bold text-primary md:text-3xl lg:text-4xl;
+}
+
+.lexical h2 {
+  @apply text-lg font-bold text-primary md:text-xl lg:text-2xl;
+}
+
+.lexical p {
+  @apply text-base font-normal text-foreground;
+}
+
+.lexical ul {
+  @apply list-inside list-disc;
+}
+
+.lexical li {
+  @apply text-base font-normal text-foreground;
+}
+
+.lexical code {
+  @apply inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm font-normal leading-none text-foreground;
+}
+
+.lexical a {
+  @apply text-primary underline transition-colors duration-300 hover:text-primary;
+}
+
+/* bright */
+.code-preview pre {
+  @apply !bg-transparent;
+}
+
+.code-preview div[data-bright-theme] {
+  @apply !my-0 !max-h-[32rem] !overflow-scroll;
+}

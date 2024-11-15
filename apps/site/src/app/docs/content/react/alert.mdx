@@ -1,0 +1,367 @@
+---
+title: React and Tailwind CSS Alert - Material Tailwind v3
+description: Implement alerts with React and Tailwind CSS in Material Tailwind v3. Display important messages and notifications with customizable alert components.
+github: alert
+prev: docs/react/video
+next: docs/react/dialog
+---
+
+# Tailwind CSS Alert - React
+
+Get started on your web projects with our React and Tailwind CSS `Alert` component which provides contextual feedback messages for typical user actions.
+
+An alert displays a short and important message attracting the user's attention without interrupting the user's task. Use this element when you need to show highly-important messages to users or when you need a persistent static container that is closable by user actions.
+
+See below our `Alert` component examples that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Alert Demo
+
+Here's how to implement a simple and responsive `Alert` component. It can be used to display some feedback message in your website.
+
+<ComponentPreview demo={<Alert.AlertDemo />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertDemo() {
+  return (
+    <Alert>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Variants
+
+We provides different alert variants like `ghost`, `outline`, `solid`, and `gradient` so you can adapt it easily to your needs. You can simply use the `variant` prop to change the alert variant.
+
+In the example below, we've showcased the different alert variants that you can use in your project.
+
+<ComponentPreview demo={<Alert.AlertVariants />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertVariants() {
+  return (
+    <div className="w-full space-y-2">
+      <Alert variant="ghost">
+        <Alert.Content>A simple alert for showing message, with variant="ghost"</Alert.Content>
+      </Alert>
+      <Alert variant="outline">
+        <Alert.Content>A simple alert for showing message. with variant="outline"</Alert.Content>
+      </Alert>
+      <Alert variant="solid">
+        <Alert.Content>A simple alert for showing message. with variant="solid"</Alert.Content>
+      </Alert>
+      <Alert variant="gradient">
+        <Alert.Content>A simple alert for showing message. with variant="gradient"</Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Colors
+
+We provide different alert colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the alert color.
+
+In the example below, we've showcased the different alert colors that you can use in your project.
+
+<ComponentPreview demo={<Alert.AlertColors />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertColors() {
+  return (
+    <div className="w-full space-y-2">
+      <Alert color="primary">
+        <Alert.Content>
+          A simple alert for showing message, with color="primary"
+        </Alert.Content>
+      </Alert>
+      <Alert color="secondary">
+        <Alert.Content>
+          A simple alert for showing message, with color="secondary"
+        </Alert.Content>
+      </Alert>
+      <Alert color="info">
+        <Alert.Content>
+          A simple alert for showing message, with color="info"
+        </Alert.Content>
+      </Alert>
+      <Alert color="success">
+        <Alert.Content>
+          A simple alert for showing message, with color="success"
+        </Alert.Content>
+      </Alert>
+      <Alert color="warning">
+        <Alert.Content>
+          A simple alert for showing message, with color="warning"
+        </Alert.Content>
+      </Alert>
+      <Alert color="error">
+        <Alert.Content>
+          A simple alert for showing message, with color="error"
+        </Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Icon
+
+You can use the `Alert.Icon` component to add an icon to your alert for better visual representation. Use the example below to create alert with icon.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
+<ComponentPreview demo={<Alert.AlertIcon />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertIcon() {
+  return (
+    <Alert>
+      <Alert.Icon>
+        <WarningCircle className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert with List
+
+You can use `Alert` and `Typography` components togheter to create an alert with a list of items. Use the example below to create alert with list inside.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
+<ComponentPreview demo={<Alert.AlertWithList />}>
+```tsx
+import { Alert, Typography } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertWithList() {
+  return (
+    <div className="flex w-full flex-col gap-2">
+      <Alert variant="ghost">
+        <Alert.Icon>
+          <WarningCircle className="h-5 w-5" />
+        </Alert.Icon>
+        <Alert.Content className="mt-0.5">
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="outline">
+        <Alert.Icon>
+          <WarningCircle className="h-5 w-5" />
+        </Alert.Icon>
+        <Alert.Content className="mt-0.5">
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="solid">
+        <Alert.Icon>
+          <WarningCircle className="h-5 w-5" />
+        </Alert.Icon>
+        <Alert.Content className="mt-0.5">
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="gradient">
+        <Alert.Icon>
+          <WarningCircle className="h-5 w-5" />
+        </Alert.Icon>
+        <Alert.Content className="mt-0.5">
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
+          </ul>
+        </Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Dismissible
+
+You can use `Alert.DismissTrigger` component to add a close button to your alert for better user experience. Use the example below to create a dismissible alert.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
+<ComponentPreview demo={<Alert.AlertDismissible />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertDismissible() {
+  return (
+    <Alert>
+      <Alert.Icon>
+        <WarningCircle className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+      <Alert.DismissTrigger />
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Custom Close Icon
+
+You can use `Alert.DismissTrigger` component to add a custom close button to your alert. Use the example below to create a dismissible alert with custom close trigger.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
+<ComponentPreview demo={<Alert.AlertCustomCloseIcon />}>
+```tsx
+import { Alert, Button } from "@material-tailwind/react";
+import { WarningCircleSolid } from "iconoir-react";
+
+export function AlertCustomCloseIcon() {
+  return (
+    <Alert className="items-center">
+      <Alert.Icon>
+        <WarningCircleSolid className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>
+        Sorry, something went wrong please try again.
+      </Alert.Content>
+      <Alert.DismissTrigger as={Button} size="sm">
+        Close
+      </Alert.DismissTrigger>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert with Content
+
+Use the example below to create an alert with content inside, this is useful when you need to show a message with a title and a description.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
+<ComponentPreview demo={<Alert.AlertWithContent />}>
+```tsx
+import { Alert, Typography } from "@material-tailwind/react";
+import { CheckCircleSolid } from "iconoir-react";
+
+export function AlertWithContent() {
+  return (
+    <Alert>
+      <Alert.Icon>
+        <CheckCircleSolid className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content className="mt-0.5">
+        <Typography className="mb-1 font-bold">
+          Success
+        </Typography>
+        <Typography>
+          I don't know what that word means. I'm happy. But success, that goes
+          back to what in somebody's eyes success means. For me, success is
+          inner peace. That's a good day for me.
+        </Typography>
+      </Alert.Content>
+      <Alert.DismissTrigger />
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+
+---
+
+## Alert Custom Styles
+
+You can use the `className` prop to add custom styles to your alert. Use the example below to create an alert with custom styles.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
+<ComponentPreview demo={<Alert.AlertCustomStyles />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+import { CheckCircleSolid } from "iconoir-react";
+
+export function AlertCustomStyles() {
+  return (
+    <Alert className="rounded-none border-b-0 border-l-4 border-r-0 border-t-0 border-green-500 bg-green-500/10 font-medium text-green-500">
+      <Alert.Icon>
+        <CheckCircleSolid className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>

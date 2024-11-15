@@ -1,0 +1,151 @@
+---
+title: React and Tailwind CSS Rating Bar - Material Tailwind v3
+description: Implement a rating bar in your React application using Tailwind CSS and Material Tailwind v3. Improve user feedback with customizable rating options.
+github: rating
+prev: docs/react/radio
+next: docs/react/select
+---
+
+# Tailwind CSS Rating - React
+
+Use our Tailwind CSS `Rating` component to show reviews and ratings in your web projects. The `Rating` can be used as a visual identifier for reviews and rating on your website.
+
+See below our beautiful `Rating` examples that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+---
+
+## Rating Demo
+
+Here's how to implement a simple `Rating` component. It can be used for providing rating to the product or app in your website.
+
+<ComponentPreview demo={<Rating.RatingDemo />}>
+```tsx
+import { Rating } from "@material-tailwind/react";
+
+export function RatingDemo() {
+  return <Rating value={4} />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Rating Colors
+
+We provide different colors for `Rating` component like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the `Rating` component color.
+
+In the example below, we've showcased the different colors for `Rating` color that you can use in your project.
+
+<ComponentPreview demo={<Rating.RatingColors />}>
+```tsx
+import { Rating } from "@material-tailwind/react";
+
+export function RatingColors() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Rating value={4} color="primary" />
+      <Rating value={4} color="secondary" />
+      <Rating value={4} color="info" />
+      <Rating value={4} color="success" />
+      <Rating value={4} color="warning" />
+      <Rating value={4} color="error" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Readonly Rating
+
+You can use the `readonly` prop to make the `Rating` component readonly, it's useful for just showing rating and prevent the user from interacting with the `Rating` component.
+
+<ComponentPreview demo={<Rating.ReadonlyRating />}>
+```tsx
+import { Rating } from "@material-tailwind/react";
+
+export function ReadonlyRating() {
+  return <Rating value={4} readonly />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Rating Icon
+
+You can use the `ratedIcon` and `unratedIcon` props for customizing the icons for rated and unrated states of `Rating` component. In the example below, we've showcased custom icons used for `Rating` component that you can use in your project.
+
+<ComponentPreview demo={<Rating.CustomRatingIcon />}>
+```tsx
+import { Rating } from "@material-tailwind/react";
+import { Heart, HeartSolid } from "iconoir-react";
+
+export function CustomRatingIcon() {
+  return <Rating value={4} unratedIcon={Heart} ratedIcon={HeartSolid} />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Rating with Text
+
+The `Rating` component can be used with a label to provide more context to the user. In the example below, we've added a label by using the `Rating` and `Typography` components together.
+
+<ComponentPreview demo={<Rating.RatingWithText />}>
+```tsx
+import * as React from "react";
+import { Rating, Typography } from "@material-tailwind/react";
+
+export function RatingWithText() {
+  const [rated, setRated] = React.useState(4);
+
+  return (
+    <div className="flex items-center gap-2">
+      <Typography color="primary" className="font-semibold">
+        {rated}
+      </Typography>
+      <Rating value={4} onValueChange={(value) => setRated(value)} />
+      <Typography color="default" className="font-semibold">
+        Based on 134 Reviews
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Rating with Comment
+
+Use the example below for providing testimonials and feedbacks in your website, the example used `Typography`, `Avatar` and `Rating` components to make a user feedback component.
+
+<ComponentPreview demo={<Rating.RatingWithComment />}>
+```tsx
+import { Typography, Avatar, Rating } from "@material-tailwind/react";
+
+export function RatingWithComment() {
+  return (
+    <div className="px-8 text-center">
+      <Typography as="p" type="h5" className="mb-6">
+        &quot;This is an excellent product, the documentation is excellent and
+        helped me get things done more efficiently.&quot;
+      </Typography>
+      <Avatar
+        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image"
+        size="lg"
+      />
+      <Typography className="mt-4 font-bold">Tania Andrew</Typography>
+      <Typography as="p" type="small" className="mb-4 text-foreground">
+        Lead Frontend Developer
+      </Typography>
+      <Rating value={4} color="warning" readonly />
+    </div>
+  );
+}
+```
+</ComponentPreview>

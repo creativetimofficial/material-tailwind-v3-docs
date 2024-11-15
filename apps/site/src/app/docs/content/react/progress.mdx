@@ -1,0 +1,178 @@
+---
+title: React and Tailwind CSS Progress Bar - Material Tailwind v3
+description: Implement progress bars with React and Tailwind CSS using Material Tailwind v3. Track progress visually with customizable and responsive progress bar components.
+github: progress
+prev: docs/react/spinner
+next: docs/react/breadcrumb
+---
+
+# Tailwind CSS Progress - React
+
+Our React and Tailwind CSS progressbar can be used to show a user how far along he is in a process. The progress can be determinate or indeterminate. Use the Progress Bar to show an ongoing process that takes a noticeable time to finish.
+
+Below we are presenting our examples of `Progress` component that you can use in your Tailwind CSS and React project. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Progress Demo
+
+Here's how to implement a simple and responsive `Progress` component. It can be used to show the progress of a process that takes a noticeable time to finish.
+
+<ComponentPreview demo={<Progress.ProgressDemo />}>
+```tsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressDemo() {
+  return (
+    <Progress value={50}>
+      <Progress.Bar />
+    </Progress>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Sizes
+
+We provide different progressbar sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the progressbar size.
+
+In the example below, we've showcased the different progressbar sizes that you can use in your project.
+
+<ComponentPreview demo={<Progress.ProgressSizes />}>
+```tsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressSizes() {
+  return (
+    <div className="w-full space-y-6">
+      <Progress size="sm" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress size="md" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress size="lg" value={50}>
+        <Progress.Bar />
+      </Progress>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Colors
+
+We provide different progressbar colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the progressbar color.
+
+In the example below, we've showcased the different progressbar colors that you can use in your project.
+
+<ComponentPreview demo={<Progress.ProgressColors />}>
+```tsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressColors() {
+  return (
+    <div className="w-full space-y-4">
+      <Progress color="primary" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="secondary" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="info" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="success" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="warning" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="error" value={50}>
+        <Progress.Bar />
+      </Progress>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Label Inside
+
+You can add a label inside the progressbar to show the percentage of the progress. You can simply use the `Progress.Bar` and `Typography` components to add the label inside the progressbar.
+
+<ComponentPreview demo={<Progress.ProgressLabelInside />}>
+```tsx
+import { Progress, Typography } from "@material-tailwind/react";
+
+export function ProgressLabelInside() {
+  return (
+    <Progress size="lg" value={50}>
+      <Progress.Bar className="grid place-items-center">
+        <Typography type="small" color="secondary">
+          50% Completed
+        </Typography>
+      </Progress.Bar>
+    </Progress>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Label Outside
+
+You can add a label outside the progressbar to show the percentage of the progress. You can simply use the `Progress.Bar` and `Typography` components to add the label outside the progressbar.
+
+<ComponentPreview demo={<Progress.ProgressLabelOutside />}>
+```tsx
+import { Progress, Typography } from "@material-tailwind/react";
+
+export function ProgressLabelOutside() {
+  return (
+    <div className="w-full space-y-2">
+      <Typography
+        color="default"
+        className="flex items-center justify-between font-semibold"
+      >
+        <span>Completed</span>
+        <span>50%</span>
+      </Typography>
+      <Progress value={50}>
+        <Progress.Bar />
+      </Progress>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Custom Styles
+
+You can use the `className` prop to customize the `Progress` component style and make your own custom progressbar.
+
+<ComponentPreview demo={<Progress.ProgressCustomStyles />}>
+```tsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressCustomStyles() {
+  return (
+    <Progress
+      value={50}
+      className="border border-gray-900/10 bg-gray-900/5 p-1 dark:border-gray-800 dark:bg-gray-900"
+    >
+      <Progress.Bar className="rounded-full" />
+    </Progress>
+  );
+}
+```
+</ComponentPreview>

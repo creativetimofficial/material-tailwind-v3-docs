@@ -1,0 +1,329 @@
+---
+title: React and Tailwind CSS Button Group - Material Tailwind v3
+description: Learn to create and style button groups with React and Tailwind CSS in Material Tailwind v3. Perfect for grouping related actions and improving UX.
+github: button-group
+prev: docs/react/button
+next: docs/react/checkbox
+---
+
+# Tailwind CSS Button Group - React
+
+Use our React `ButtonGroup` component styled with Tailwind CSS to group together a series of buttons in a single layout.
+
+The `ButtonGroup` component is an essential element of web design. Basically, it is stack of buttons. They help users navigate our websites or apps and drive them to a particular action.
+
+See below our `ButtonGroup` component examples that you can use in your Tailwind CSS and React project. The examples comes in different styles and colors, so you can adapt them easily to your needs.
+
+---
+
+## Button Group Demo
+
+Here's how to implement a simple and responsive `ButtonGroup` component. It can be used for any action that requires user interaction in your website.
+
+<ComponentPreview demo={<ButtonGroup.ButtonGroupDemo />}>
+```tsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupDemo() {
+  return (
+    <ButtonGroup>
+      <Button>React</Button>
+      <Button>Vue</Button>
+      <Button>Svelte</Button>
+    </ButtonGroup>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Button Group Variants
+
+We provides different variants like `ghost`, `outline`, `solid`, and `gradient` so you can adapt it easily to your needs. You can simply use the `variant` prop to change the buttons variant inside the `ButtonGroup` component.
+
+In the example below, we've showcased the different `ButtonGroup` variants that you can use in your project.
+
+<ComponentPreview demo={<ButtonGroup.ButtonGroupVariants />}>
+```tsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupVariants() {
+  return (
+    <div className="flex flex-col gap-4">
+      <ButtonGroup variant="ghost">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup variant="outline">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup variant="solid">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup variant="gradient">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Button Group Sizes
+
+We provide different sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the buttons size inside the `ButtonGroup` component.
+
+In the example below, we've showcased the different `ButtonGroup` sizes that you can use in your project.
+
+<ComponentPreview demo={<ButtonGroup.ButtonGroupSizes />}>
+```tsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupSizes() {
+  return (
+    <div className="flex flex-col gap-4">
+      <ButtonGroup size="sm">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup size="md">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup size="lg">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Button Group Colors
+
+We provide different colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the `ButtonGroup` component color.
+
+In the example below, we've showcased the different `ButtonGroup` colors that you can use in your project.
+
+<ComponentPreview demo={<ButtonGroup.ButtonGroupColors />}>
+```tsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function ButtonGroupColors() {
+  return (
+    <div className="flex flex-col gap-4">
+      <ButtonGroup color="primary">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup color="secondary">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup color="info">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup color="success">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup color="warning">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup color="error">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Button Group with Icon
+
+You can add an icon to the start or end of the buttons text inside the `ButtonGroup` component to make it more visually appealing and informative. Use the example below to create buttons with icon inside the `ButtonGroup` component.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
+<ComponentPreview demo={<ButtonGroup.ButtonGroupWithIcon />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+import {
+  NavArrowRight,
+  RefreshDouble,
+  CloudUpload,
+  BrightStar,
+} from "iconoir-react";
+
+export function ButtonWithIcon() {
+  return (
+    <div className="flex gap-4">
+      <Button variant="ghost">
+        Read More
+        <NavArrowRight className="ms-1 h-4 w-4" />
+      </Button>
+      <Button variant="outline">
+        Refresh
+        <RefreshDouble className="ms-2 h-4 w-4" />
+      </Button>
+      <Button variant="solid">
+        <CloudUpload className="me-2 h-4 w-4" />
+        Upload Assets
+      </Button>
+      <Button variant="gradient">
+        Give Us Star
+        <BrightStar className="ms-2 h-4 w-4" />
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Block Level Button Group
+
+A `ButtonGroup` component could be a block-level component as well that gets all the available space in a row. You can use the `isFullWidth` prop to make the `ButtonGroup` component a block-level element.
+
+In the example below, we've showcased the block-level `ButtonGroup` component in 4 different variants that you can use in your project.
+
+<ComponentPreview demo={<ButtonGroup.BlockLevelButtonGroup />}>
+```tsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function BlockLevelButtonGroup() {
+  return (
+    <div className="flex flex-col gap-4 w-full">
+      <ButtonGroup isFullWidth variant="ghost">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup isFullWidth variant="outline">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup isFullWidth variant="solid">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup isFullWidth variant="gradient">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Pill Button Group
+
+A pill `ButtonGroup` component is a `ButtonGroup` component with rounded corners that make it look like a pill. You can use the `isPill` prop to make the `ButtonGroup` component looks like a pill.
+
+In the example below, we've showcased the pill `ButtonGroup` component in 4 different variants that you can use in your project.
+
+<ComponentPreview demo={<ButtonGroup.PillButtonGroup />}>
+```tsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export function PillButtonGroup() {
+  return (
+    <div className="flex flex-col gap-4">
+      <ButtonGroup isPill variant="ghost">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup isPill variant="outline">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup isPill variant="solid">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+      <ButtonGroup isPill variant="gradient">
+        <Button>React</Button>
+        <Button>Vue</Button>
+        <Button>Svelte</Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Button Group
+
+You can use the `className` prop to customize the `ButtonGroup` component and `Button` components inside the `ButtonGroup` component style and make your own custom `ButtonGroup` component.
+
+In the example below, we've showcased how to create custom social media `ButtonGroup` that you can use in your project.
+
+
+<ComponentPreview demo={<ButtonGroup.CustomButtonGroup />}>
+```tsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+import { Facebook, Dribbble, Linkedin, Instagram } from "iconoir-react";
+
+export function CustomButtonGroup() {
+  return (
+    <ButtonGroup>
+      <Button className="border-[#1877F2] bg-[#1877F2] text-white hover:border-[#1877F2] hover:bg-[#1877F2] hover:brightness-110">
+        <Facebook className="mr-1.5 h-4 w-4 stroke-2" />
+        Like
+      </Button>
+      <Button className="border-[#833ab4] bg-[#833ab4] text-white hover:border-[#833ab4] hover:bg-[#833ab4] hover:brightness-110">
+        <Instagram className="mr-1.5 h-4 w-4 stroke-2" />
+        Follow
+      </Button>
+      <Button className="border-[#0a66c2] bg-[#0a66c2] text-white hover:border-[#0a66c2] hover:bg-[#0a66c2] hover:brightness-110">
+        <Linkedin className="mr-1.5 h-4 w-4 stroke-2" />
+        Connect
+      </Button>
+      <Button className="border-[#ea4c89] bg-[#ea4c89] text-white hover:border-[#ea4c89] hover:bg-[#ea4c89] hover:brightness-110">
+        <Dribbble className="mr-1.5 h-4 w-4 stroke-2" />
+        Follow
+      </Button>
+    </ButtonGroup>
+  );
+}
+```
+</ComponentPreview>
